@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/travel-ourjourney/static/css/main.c8a7a627.css",
+    "main.js": "/travel-ourjourney/static/js/main.e6694be4.js",
+    "static/media/background.png": "/travel-ourjourney/static/media/background.868c1b17c25bf44fc778.png",
+    "static/media/welcome.png": "/travel-ourjourney/static/media/welcome.868c1b17c25bf44fc778.png",
+    "static/media/plane.svg": "/travel-ourjourney/static/media/plane.0c9fbf1a7f5ae16fcfff.svg",
+    "index.html": "/travel-ourjourney/index.html",
+    "main.c8a7a627.css.map": "/travel-ourjourney/static/css/main.c8a7a627.css.map",
+    "main.e6694be4.js.map": "/travel-ourjourney/static/js/main.e6694be4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c8a7a627.css",
+    "static/js/main.e6694be4.js"
+  ]
+}
