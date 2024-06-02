@@ -1,35 +1,30 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Pastikan Bootstrap CSS diimpor
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import pandawaBeach from '../assets/img/homescreen/pandawa-beach.png';
 import '../css/homescreen.css'; // Pastikan ini mengarah ke file CSS yang benar
 
 const HomeScreen = () => {
+  const [background, setBackground] = useState('background1');
+
   useEffect(() => {
-    const backgrounds = ['background1', 'background2', 'background3', 'background4', 'background5'];
-    let currentBackgroundIndex = 0;
-    const homeScreenElement = document.querySelector('.home-screen');
-
     const intervalId = setInterval(() => {
-      // Hapus semua class background sebelumnya
-      homeScreenElement.classList.remove(...backgrounds);
-      // Tambahkan class background baru
-      homeScreenElement.classList.add(backgrounds[currentBackgroundIndex]);
-      // Perbarui indeks untuk background selanjutnya
-      currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
-    }, 10000); // ganti background setiap 10 detik
+      setBackground(prev => {
+        const nextBackground = (parseInt(prev.slice(-1), 10) % 5) + 1; // Rotasi dari background1 sampai background5
+        return `background${nextBackground}`;
+      });
+    }, 5000); // Ganti background setiap 5 detik
 
-    // Membersihkan interval saat komponen unmount
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="home-screen">
+    <div className={`home-screen ${background}`}>
       <header className="header">
         <div className="logo">
           <span>DESTINA<span>6</span></span>
         </div>
         <nav className="nav-bar">
-          <a href="/homescreen">Home</a>
+          <a href="/">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
           <a href="/signin">Sign in</a>

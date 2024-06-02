@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
     background-size: cover; /* Menutupi seluruh area */
     background-position: center; /* Pusatkan gambar */
-    color: #fff;
+    transition: background-image 1s ease-in-out; /* Transisi untuk background-image */
   }
   
   .background1 {
@@ -28,6 +28,7 @@
   .background5 {
     background-image: url('../assets/img/bg5.png');
   }
+
 /* ===========================
    Header Styles
    =========================== */

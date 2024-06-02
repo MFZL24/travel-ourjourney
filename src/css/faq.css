@@ -6,6 +6,7 @@
     font-family: Arial, sans-serif;
     background-size: cover; /* Menutupi seluruh area */
     background-position: center; /* Pusatkan gambar */
+    background-image: url('../assets/img/bg1.png');
   }
   
   .background1 {

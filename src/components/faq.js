@@ -4,7 +4,7 @@ import '../css/faq.css'; // Pastikan ini mengarah ke file CSS yang benar
 
 const FAQ = () => {
     return (
-        <div className="faq">
+        <div className="faq" style={{ backgroundImage: "url('/src/assets/img/bg1.png')" }}>
             <header className="header">
                 <div className="logo">
                     <span>DESTINA<span>6</span></span>

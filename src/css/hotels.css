@@ -1,0 +1,109 @@
+/* ===========================
+   Home Screen Styles
+   =========================== */
+
+   .home-screen {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #5c8ff3, #0057ff);
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .logo span {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .nav-bar a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .tab-navigation {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #5c8ff3, #0057ff);
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab-navigation a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .tab-navigation a:hover {
+    background: #fff;
+    color: #0057ff;
+  }
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-form .form-control {
+    margin-right: 10px;
+  }
+  
+  .filter-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-section h4 {
+    margin-bottom: 10px;
+  }
+  
+  .filter-section .form-range {
+    width: 100%;
+  }
+  
+  .hotel-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hotel-card {
+    border: none;
+  }
+  
+  .hotel-card .card-body {
+    padding: 20px;
+  }
+  
+  .hotel-card .room-info {
+    border-radius: 10px;
+  }
+  
+  .hotel-card .btn-primary {
+    background: linear-gradient(to right, #5c8ff3, #0057ff);
+    border: none;
+  }
