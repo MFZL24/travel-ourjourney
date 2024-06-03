@@ -24,7 +24,7 @@ const HomeScreen = () => {
           <span>DESTINA<span>6</span></span>
         </div>
         <nav className="nav-bar">
-          <a href="/">Home</a>
+          <a href="/homescreen">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
           <a href="/signin">Sign in</a>
