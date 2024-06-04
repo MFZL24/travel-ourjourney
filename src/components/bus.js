@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // Pastikan Bootstrap CSS diimpor
 import React, { useEffect, useState } from 'react';
-import '../css/faq.css'; // Pastikan ini mengarah ke file CSS yang benar
+import '../css/bus.css'; // Pastikan ini mengarah ke file CSS yang benar
 
 const BUS = () => {
   const [background, setBackground] = useState('background1');

@@ -6,6 +6,7 @@ import Bus from "./components/bus";
 import Contact from "./components/contact";
 import Destinations from "./components/destinations";
 import Faq from "./components/faq";
+import Flights from "./components/flights";
 import HomeScreen from "./components/homescreen"; // Pastikan import ini benar
 import Hotels from "./components/hotels";
 import SplashScreen from "./components/splashscreen";
@@ -18,9 +19,10 @@ function App() {
       <Route path="/homescreen" element={<HomeScreen />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/faq" element={<Hotels/>} />
-      <Route path="/faq" element={<Bus/>} />
+      <Route path="/bus" element={<Bus/>} />
       <Route path="/contact" element={<Contact/>} />
-      <Route path="/destinasions" element={<Destinations/>} />
+      <Route path="/destinations" element={<Destinations/>} />
+      <Route path="/flights" element={<Flights/>} />
       {/* Tambahkan route lain sesuai kebutuhan */}
     </Routes>
   );
