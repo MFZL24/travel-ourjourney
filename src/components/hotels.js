@@ -1,29 +1,17 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css"; // Pastikan Bootstrap CSS diimpor
+// import React from "react";
+// import pandawaBeach from "../assets/img/homescreen/pandawa-beach.png";
+import hotel1 from "../assets/img/hotel/hotel-1.jpeg";
+import "../css/Hotels.css"; // Pastikan ini mengarah ke file CSS yang benar
 import React, { useState } from "react";
-import pandawaBeach from "../assets/img/homescreen/pandawa-beach.png";
-import "../css/Hotels.css";
 
 const Hotels = () => {
   const [priceRange, setPriceRange] = useState([0, 10000000]);
-  const [filters, setFilters] = useState({
+  const [setFilters] = useState({
     popular: [],
     facilities: [],
-  }); 
-  const [hotels,] = useState([
-    {
-      id: 1,
-      name: "Pandawa Beach Hotel",
-      rating: 4.0,
-      location: "Near Kuta Beach - Kuta",
-      roomInfo: "Standard Room, Breakfast Included",
-      price: 1500000,
-      discount: "20%",
-      facilities: ["wifi", "pool"],
-    },
-    // Tambahkan data hotel lainnya di sini
-  ]);
+  });
 
-  // eslint-disable-next-line no-unused-vars
   const handlePriceChange = (e) => {
     setPriceRange([0, parseInt(e.target.value)]);
   };
@@ -44,17 +32,6 @@ const Hotels = () => {
       }
     });
   };
-
-  const filteredHotels = hotels.filter((hotel) => {
-    const matchesPriceRange = hotel.price <= priceRange[1];
-    const matchesPopularFilters = filters.popular.every((filter) =>
-      hotel.facilities.includes(filter)
-    );
-    const matchesFacilitiesFilters = filters.facilities.every((filter) =>
-      hotel.facilities.includes(filter)
-    );
-    return matchesPriceRange && matchesPopularFilters && matchesFacilitiesFilters;
-  });
 
   return (
     <div className="home-screen">
@@ -88,95 +65,218 @@ const Hotels = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="filter-section">
-              <h4>Price (Rp 0 - Rp 10,000,000+)</h4>
-              <input type="range" min="0" max="10000000" step="50000" value={priceRange[1]} onChange={handlePriceChange} className="form-range" />
-              <p>Up to: Rp {priceRange[1].toLocaleString()}</p>
-              <div className="price-options">
-                <label>
-                  <input type="radio" name="price" value="0-300000" onChange={handlePriceChange} /> Rp 0 - Rp 300,000
-                </label>
-                <br />
-                <label>
-                  <input type="radio" name="price" value="0-5000000" onChange={handlePriceChange} /> Rp 0 - Rp 5,000,000
-                </label>
-                <br />
-                <label>
-                  <input type="radio" name="price" value="0-10000000" onChange={handlePriceChange} /> Rp 0 - Rp 10,000,000
-                </label>
+              <div className="price">
+                <h4>Price (Rp 0 - Rp 10,000,000+)</h4>
+                <input type="range" min="0" max="10000000" step="50000" value={priceRange[1]} onChange={handlePriceChange} className="form-range" />
+                <p>Up to: Rp {priceRange[1].toLocaleString()}</p>
+                <div className="price-options">
+                  <label>
+                    <input type="radio" name="price" value="0-300000" onChange={handlePriceChange} /> Rp 0 - Rp 300,000
+                  </label>
+                  <br />
+                  <label>
+                    <input type="radio" name="price" value="0-5000000" onChange={handlePriceChange} /> Rp 0 - Rp 5,000,000
+                  </label>
+                  <br />
+                  <label>
+                    <input type="radio" name="price" value="0-10000000" onChange={handlePriceChange} /> Rp 0 - Rp 10,000,000
+                  </label>
+                </div>
               </div>
-              <h4>Popular Filters</h4>
-              <label>
-                <input type="checkbox" name="popular" value="breakfast" onChange={handleFilterChange} /> Breakfast Included
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="popular" value="payment" onChange={handleFilterChange} /> Only Payment
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="popular" value="payAtHotel" onChange={handleFilterChange} /> Pay at Hotel
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="popular" value="singleBed" onChange={handleFilterChange} /> Single Bed
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="popular" value="doubleBed" onChange={handleFilterChange} /> Double Bed
-              </label>
-              <h4>Facilities</h4>
-              <label>
-                <input type="checkbox" name="facilities" value="wifi" onChange={handleFilterChange} /> WiFi
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="facilities" value="pool" onChange={handleFilterChange} /> Swimming Pool
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="facilities" value="parking" onChange={handleFilterChange} /> Parking
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="facilities" value="restaurant" onChange={handleFilterChange} /> Restaurant
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="facilities" value="elevator" onChange={handleFilterChange} /> Elevator
-              </label>
             </div>
           </div>
           <div className="col-md-9">
             <div className="hotel-list">
-              {filteredHotels.map((hotel) => (
-                <div key={hotel.id} className="hotel-card card mb-4">
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src={pandawaBeach} className="img-fluid rounded-start" alt="Hotel" />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h5 className="card-title">{hotel.name}</h5>
-                        <p className="card-text">Rating: {hotel.rating}/5 - Very Good</p>
-                        <p className="card-text">
-                          <small className="text-muted">
-                            <i className="bi bi-geo-alt"></i> {hotel.location}
-                          </small>
-                        </p>
-                        <div className="room-info bg-light p-2 mb-2">
-                          <p>{hotel.roomInfo}</p>
-                          <p>Discount: {hotel.discount}</p>
+              <div className="hotel-card card mb-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img src={hotel1} className="img-fluid rounded-start" alt="Hotel" />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h3 className="card-title">Pandawa Beach Hotel</h3>
+                      <div className="d-flex justify-content-left align-items-center">
+                        <button className="btn btn-secondary">4.0/5</button>
+                        <h10 className="card-text">Very Good</h10>
+                      </div>
+                      <div className="kota-text">
+                        <h10 className="text-muted">Near Kuta Beach - Kuta (show on map)</h10>
+                      </div>
+                      <div className="room-info bg-secondary p-2 mb-2">
+                        <div className="left">
+                          <div>
+                            <h10>Standard Room</h10>
+                          </div>
+                          <div>
+                            <h10>Breakfast Included</h10>
+                          </div>
+                          <div className="red">
+                            <h10>Only 1 room left</h10>
+                          </div>
                         </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <h6>Price: Rp {hotel.price.toLocaleString()}</h6>
-                          <button className="btn btn-primary">Book Now</button>
+                        <div className="right">
+                          <div className="d-flex justify-content-left align-items-center">
+                            <button className="btn btn-danger">20% OFF</button>
+                          </div>
+                          <h2>Price: Rp 1,500,000</h2>
+                          <div className="d-flex justify-content-end align-items-center">
+                            <button className="btn btn-outline-primary">Book Now</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-              {/* Tambahkan lebih banyak kartu hotel jika diperlukan */}
+              </div>
+              {/* Add more hotel cards as needed */}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
+              <div className="filter-section">
+                <div className="popular">
+                  <h4>Popular Filters</h4>
+                  <label>
+                    <input type="checkbox" name="popular" value="breakfast" onChange={handleFilterChange} /> Breakfast Included
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="popular" value="payment" onChange={handleFilterChange} /> Only Payment
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="popular" value="payAtHotel" onChange={handleFilterChange} /> Pay at Hotel
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="popular" value="singleBed" onChange={handleFilterChange} /> Single Bed
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="popular" value="doubleBed" onChange={handleFilterChange} /> Double Bed
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-9">
+              <div className="hotel-list">
+                <div className="hotel-card card mb-4">
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src={hotel1} className="img-fluid rounded-start" alt="Hotel" />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h3 className="card-title">Pandawa Beach Hotel</h3>
+                        <div className="d-flex justify-content-left align-items-center">
+                          <button className="btn btn-secondary">4.0/5</button>
+                          <h10 className="card-text">Very Good</h10>
+                        </div>
+                        <div className="kota-text">
+                          <h10 className="text-muted">Near Kuta Beach - Kuta (show on map)</h10>
+                        </div>
+                        <div className="room-info bg-secondary p-2 mb-2">
+                          <div className="left">
+                            <div>
+                              <h10>Standard Room</h10>
+                            </div>
+                            <div>
+                              <h10>Breakfast Included</h10>
+                            </div>
+                            <div className="red">
+                              <h10>Only 1 room left</h10>
+                            </div>
+                          </div>
+                          <div className="right">
+                            <div className="d-flex justify-content-left align-items-center">
+                              <button className="btn btn-danger">20% OFF</button>
+                            </div>
+                            <h2>Price: Rp 1,500,000</h2>
+                            <div className="d-flex justify-content-end align-items-center">
+                              <button className="btn btn-outline-primary">Book Now</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Add more hotel cards as needed */}
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3">
+              <div className="filter-section">
+                <div className="facilities">
+                  <h4>Facilities</h4>
+                  <label>
+                    <input type="checkbox" name="facilities" value="wifi" onChange={handleFilterChange} /> WiFi
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="facilities" value="pool" onChange={handleFilterChange} /> Swimming Pool
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="facilities" value="parking" onChange={handleFilterChange} /> Parking
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="facilities" value="restaurant" onChange={handleFilterChange} /> Restaurant
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="facilities" value="elevator" onChange={handleFilterChange} /> Elevator
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-9">
+              <div className="hotel-list">
+                <div className="hotel-card card mb-4">
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src={hotel1} className="img-fluid rounded-start" alt="Hotel" />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h3 className="card-title">Pandawa Beach Hotel</h3>
+                        <div className="d-flex justify-content-left align-items-center">
+                          <button className="btn btn-secondary">4.0/5</button>
+                          <h10 className="card-text">Very Good</h10>
+                        </div>
+                        <div className="kota-text">
+                          <h10 className="text-muted">Near Kuta Beach - Kuta (show on map)</h10>
+                        </div>
+                        <div className="room-info bg-secondary p-2 mb-2">
+                          <div className="left">
+                            <div>
+                              <h10>Standard Room</h10>
+                            </div>
+                            <div>
+                              <h10>Breakfast Included</h10>
+                            </div>
+                            <div className="red">
+                              <h10>Only 1 room left</h10>
+                            </div>
+                          </div>
+                          <div className="right">
+                            <div className="d-flex justify-content-left align-items-center">
+                              <button className="btn btn-danger">20% OFF</button>
+                            </div>
+                            <h2>Price: Rp 1,500,000</h2>
+                            <div className="d-flex justify-content-end align-items-center">
+                              <button className="btn btn-outline-primary">Book Now</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Add more hotel cards as needed */}
+              </div>
             </div>
           </div>
         </div>
