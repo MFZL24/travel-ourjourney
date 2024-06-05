@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css'; // Pastikan Bootstrap CSS diimpor
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
-import '../css/faq.css'; // Pastikan ini mengarah ke file CSS yang benar
+import '../css/faq.css';
 
 const FAQ = () => {
   const [background, setBackground] = useState('background1');
@@ -8,10 +8,10 @@ const FAQ = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setBackground(prev => {
-        const nextBackground = (parseInt(prev.slice(-1), 10) % 5) + 1; // Rotasi dari background1 sampai background5
+        const nextBackground = (parseInt(prev.slice(-1), 10) % 5) + 1;
         return `background${nextBackground}`;
       });
-    }, 5000); // Ganti background setiap 5 detik
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -31,21 +31,52 @@ const FAQ = () => {
       </header>
       <main className="container text-center mt-4">
         <h1 className='StartNew'>We’re here to help<span>6</span></h1>
+        <input type="text" placeholder="Search destinations..." />
         <div className="tab-navigation">
-          <a href="/destinations" >Destinations</a>
+          <a href="/destinations">Destinations</a>
           <a href="/hotels">Hotels</a>
           <a href="/flights">Flight</a>
           <a href="/bus">Bus</a>
         </div>
-        <div className="search-form">
-          <input type="text" placeholder="Destination" className="form-control me-2" />
-          <input type="date" className="form-control me-2" />
-          <input type="date" className="form-control me-2" />
-          <input type="text" placeholder="1 room, 2 adults, 0 children" className="form-control me-2" />
-          <button className="btn btn-dark">SEARCH</button>
+        <div className="faq-section">
+          <h1>FAQ</h1>
+          <div className="faq-item">
+            <p>How do I create an account in this app?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Do I need to pay to use this app?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Bagaimana cara memesan tiket pesawat/hotel/tur melalui aplikasi ini?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Apa metode pembayaran yang tersedia?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>How do I book a flight/hotel/tour through this app?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Are there any cancellation fees?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Is this app available in multiple languages?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>Can I get help if there are problems with my trip?</p>
+            <button>+</button>
+          </div>
+          <div className="faq-item">
+            <p>How do I create an account in this app?</p>
+            <button>+</button>
+          </div>
         </div>
-        
-
         <section className="services-section">
           <h2>We Offer Best Services</h2>
           <div className="services-container">

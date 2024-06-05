@@ -210,6 +210,7 @@
   font-family: hanuman;
   font-weight: bold;
   margin-left: 80px;
+  color: white;
 }
 
 .recommended-section .judul {
@@ -317,6 +318,7 @@
   padding: 0; /* Menghilangkan padding */
   position: relative; /* Mengatur posisi relatif terhadap kontainer */
   z-index: 1; /* Z-index untuk layering di atas ::before */
+  color: white;
 }
 
 .slider ul li {

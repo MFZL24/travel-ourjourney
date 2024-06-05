@@ -343,7 +343,36 @@
   color: #0057FF; /* Warna teks putih saat hover */
 }
 
+/* ===========================
+   faq-item Section Styles
+   =========================== */
 
+
+.faq-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item p {
+  margin: 0;
+}
+
+.faq-item button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 
 
