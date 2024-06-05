@@ -2,109 +2,257 @@
    Home Screen Styles
    =========================== */
 
-   .home-screen {
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: linear-gradient(to right, #5c8ff3, #0057ff);
-    border-radius: 0 0 12px 12px;
-  }
-  
-  .logo span {
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
-  .nav-bar a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0 10px;
-    padding: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-bar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .tab-navigation {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(to right, #5c8ff3, #0057ff);
-    border-radius: 30px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tab-navigation a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin: 0 10px;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .tab-navigation a:hover {
-    background: #fff;
-    color: #0057ff;
-  }
-  
-  .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-form .form-control {
-    margin-right: 10px;
-  }
-  
-  .filter-section {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-     color: black;
-  }
-  
-  .filter-section h4 {
-    margin-bottom: 10px;
-  }
-  
-  .filter-section .form-range {
-    width: 100%;
-  }
-  
-  .hotel-list {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hotel-card {
-    border: none;
-  }
-  
-  .hotel-card .card-body {
-    padding: 20px;
-  }
-  
-  .hotel-card .room-info {
-    border-radius: 10px;
-  }
-  
-  .hotel-card .btn-primary {
-    background: linear-gradient(to right, #5c8ff3, #0057ff);
-    border: none;
-  }
+.home-screen {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #5c8ff3, #0057ff);
+  border-radius: 0 0 12px 12px;
+}
+
+.logo span {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #5c8ff3, #0057ff);
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-navigation a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 0 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-navigation a:hover {
+  background: #fff;
+  color: #0057ff;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form .form-control {
+  margin-right: 10px;
+}
+
+.filter-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+/* .filter-section .price {
+} */
+
+.filter-section h4 {
+  margin-bottom: 10px;
+}
+
+.filter-section .form-range {
+  width: 100%;
+}
+
+.hotel-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-card {
+  border: none;
+}
+
+.hotel-card .card-body {
+  /* padding: 10px; */
+}
+
+/* .hotel-card .card-title {
+  padding-bottom: 1px;
+} */
+
+.hotel-card .kota-text {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.hotel-card .room-info {
+  /* background-color: #333; */
+  border-radius: 10px;
+  display: flex;
+  background: linear-gradient(to right, #473f41, #aeb1b6);
+}
+
+.hotel-card .room-info .left {
+  text-align: left;
+}
+
+.hotel-card .room-info .left .red {
+  color: rgb(192, 19, 19);
+}
+
+.hotel-card .room-info .right {
+  text-align: right;
+  /* margin-right: auto; */
+  /* padding-right: 0%; */
+}
+
+.hotel-card .image-content {
+  flex: 0 0 300px; /* Mengatur lebar gambar */
+  margin-left: 20px; /* Memberikan jarak antara gambar dan teks */
+  border: 5px solid white; /* Menambahkan bingkai putih */
+}
+
+.hotel-card img {
+  margin-left: 5px;
+  margin-top: 5px;
+  /* align-items: center; */
+}
+
+.hotel-card .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hotel-card .card-text {
+  padding-left: 5px;
+}
+
+.hotel-card .btn-secondary {
+  background: linear-gradient(to right, black, black);
+  border: none;
+  border-radius: 10px;
+  /* padding: 10px; */
+}
+
+.hotel-card .btn-danger {
+  background: linear-gradient(to right, rgb(192, 19, 19), rgb(221, 171, 171));
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* .hotel-card .room-info .left {
+  color: red;
+} */
+
+.hotel-card .btn-outline-secondary {
+  /* background: linear-gradient(to right, #5c8ff3, #0057ff); */
+  /* border: none; */
+}
+
+/* ===========================
+   Destination Section Styles
+   =========================== */
+.destination-section {
+  display: flex; /* Mengatur tampilan menjadi flex */
+  justify-content: space-between; /* Menyebarkan konten secara horizontal */
+  align-items: center; /* Menengahkan konten secara vertikal */
+  margin-top: 40px;
+  text-align: left;
+  background: #f8f9fa; /* Meningkatkan transparansi */
+  padding: 20px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  font-size: 38px;
+  font-weight: normal;
+  box-sizing: border-box; /* Memastikan padding dan border termasuk dalam lebar dan tinggi */
+  z-index: 3; /* Menyesuaikan z-index agar lebih tinggi dari bordered-div dan elemen lain */
+  border-radius: 0 0 12px 12px; /* Menambahkan radius hanya di sudut bawah kiri dan kanan */
+  border: 2px solid white;
+}
+
+.destination-section .text-content {
+  flex: 1; /* Mengatur teks untuk mengambil ruang yang tersedia */
+  margin-right: 20px; /* Memberikan jarak antara teks dan gambar */
+}
+
+.destination-section h2 {
+  color: black;
+  font-family: hanuman;
+  font-weight: bold;
+  margin-left: 80px;
+}
+
+.destination-section .judul {
+  margin-left: 80px;
+  font-size: 25px;
+  color: darkgrey;
+  font-family: hanuman;
+  margin-top: -10px;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Humanist777CondensedBT";
+  src: url("../assets/font/Humanist777CondensedBT.ttf") format("truetype");
+}
+
+.destination-section h3 {
+  margin-left: 80px;
+  margin-top: 50px;
+  color: #fff; /* Mengatur warna teks menjadi putih */
+  font-family: "Humanist777CondensedBT", sans-serif; /* Menggunakan font Humanist777CondensedBT */
+  font-weight: bold;
+  font-size: 63px;
+}
+
+.destination-section .paragraf {
+  margin-left: 80px;
+  font-size: 23px;
+  color: black;
+  font-family: "Inter"; /* Memastikan font family ditulis dengan benar */
+  margin-top: -10px;
+}
+
+.destination-section .image-content {
+  flex: 0 0 300px; /* Mengatur lebar gambar */
+  margin-left: 20px; /* Memberikan jarak antara gambar dan teks */
+  border: 5px solid white; /* Menambahkan bingkai putih */
+}
+
+.destination-section .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
