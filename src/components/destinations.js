@@ -72,10 +72,10 @@ const Destinations = () => {
           <a href="/bus">Bus</a>
         </div>
         <div className="search-form">
-          <input type="text" placeholder="Destination" className="form-control me-2" />
-          <input type="date" className="form-control me-2" />
-          <input type="date" className="form-control me-2" />
-          <input type="text" placeholder="1 room, 2 adults, 0 children" className="form-control me-2" />
+          <input type="text" placeholder="Jakarta" className="form-control me-2" />
+          // <input type="date" className="form-control me-2" />
+          // <input type="date" className="form-control me-2" />
+          // <input type="text" placeholder="1 room, 2 adults, 0 children" className="form-control me-2" />
           <button className="btn btn-dark">SEARCH</button>
         </div>
 
