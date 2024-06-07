@@ -307,7 +307,6 @@
   left: -40%; /* Posisi dari kiri, lebih panjang */
   right: -60%; /* Posisi dari kanan, lebih panjang */
   height: 1px; /* Tinggi garis */
-  background-color: #fff; /* Warna garis abu-abu */
   z-index: 0; /* Z-index untuk layering */
 }
 

@@ -38,6 +38,7 @@ const FAQ = () => {
           <a href="/flights">Flight</a>
           <a href="/bus">Bus</a>
         </div>
+
         <div className="faq-section">
           <h1>FAQ</h1>
           <div className="faq-item">
@@ -76,7 +77,17 @@ const FAQ = () => {
             <p>How do I create an account in this app?</p>
             <button>+</button>
           </div>
+          <div className='still-stuck'>
+            <br></br>
+            <h2>Still Stuck? Help is a mall away</h2>
+          </div>
+            <div className='send-message'>
+                <button>send a message</button>
+            </div>
         </div>
+
+
+
         <section className="services-section">
           <h2>We Offer Best Services</h2>
           <div className="services-container">
