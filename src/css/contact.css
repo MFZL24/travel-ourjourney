@@ -138,13 +138,13 @@
 }
 
 /* ===========================
-   Search Form Styles
+   contact Form Styles
    =========================== */
-.search-form {
+.contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -5px; /* Mengurangi margin atas untuk menempelkan form ke tab navigasi */
+  margin-top: 60px; /* Mengurangi margin atas untuk menempelkan form ke tab navigasi */
   background: #fff;
   border-radius: 10px 20px 10px 20px; /* Membuat sudut bulat dengan radius 20px di bawah */
   padding: 20px;
@@ -153,7 +153,25 @@
   margin-right: auto; /* Menambahkan margin kanan otomatis */
   position: relative; /* Menambahkan posisi relatif untuk z-index */
   z-index: 5; /* Menambahkan z-index lebih rendah dari tab navigasi */
-  height: 120px; /* Menambahkan ukuran tinggi */
+  height: 800px; /* Menambahkan ukuran tinggi */
+}
+
+
+.contact img {
+  width: 320px;
+  height: 300px;
+  margin-bottom: 20px; /* Menambahkan margin bawah sebesar 20px */
+  margin-top: -460px; /* Menggeser gambar ke atas */
+}
+
+.contact form-group,
+.contact input{
+  margin-top: 100px;
+  border: 2px solid #5C8FF3;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 16px;
 }
 
 .search-form input,
@@ -307,6 +325,7 @@
   left: -40%; /* Posisi dari kiri, lebih panjang */
   right: -60%; /* Posisi dari kanan, lebih panjang */
   height: 1px; /* Tinggi garis */
+  background-color: #fff; /* Warna garis abu-abu */
   z-index: 0; /* Z-index untuk layering */
 }
 
