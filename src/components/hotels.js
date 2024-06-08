@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // Pastikan Bootstrap CSS diimpor
 // import React from "react";
 // import pandawaBeach from "../assets/img/homescreen/pandawa-beach.png";
-import hotel1 from "../assets/img/hotel/hotel-1.jpeg";
-import "../css/Hotels.css"; // Pastikan ini mengarah ke file CSS yang benar
 import React, { useState } from "react";
+import hotel1 from "../assets/img/hotel/hotel-1.jpeg";
+import "../css/hotels.css"; // Pastikan ini mengarah ke file CSS yang benar
 
 const Hotels = () => {
   const [priceRange, setPriceRange] = useState([0, 10000000]);
