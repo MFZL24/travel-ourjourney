@@ -9,6 +9,8 @@ import Faq from "./components/faq";
 import Flights from "./components/flights";
 import HomeScreen from "./components/homescreen"; // Pastikan import ini benar
 import Hotels from "./components/hotels";
+import Signin from "./components/signin";
+import Signup from "./components/signup";
 import SplashScreen from "./components/splashscreen";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
       <Route path="/contact" element={<Contact/>} />
       <Route path="/destinations" element={<Destinations/>} />
       <Route path="/flights" element={<Flights/>} />
+      <Route path="/signin" element={<Signin/>} />
+      <Route path="/signup" element={<Signup/>} />
       {/* Tambahkan route lain sesuai kebutuhan */}
     </Routes>
   );
