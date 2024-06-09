@@ -1,3 +1,4 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import '../css/faq.css';
@@ -30,8 +31,9 @@ const FAQ = () => {
         </nav>
       </header>
       <main className="container text-center mt-4">
-        <h1 className='StartNew'>We’re here to help<span>6</span></h1>
-        <input type="text" placeholder="Search destinations..." />
+        <h1 className='StartNew'>We're here to help<span>6</span></h1>
+        <input className='search' type="text" placeholder="Search help" />
+      
         <div className="tab-navigation">
           <a href="/destinations">Destinations</a>
           <a href="/hotels">Hotels</a>
@@ -119,3 +121,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+

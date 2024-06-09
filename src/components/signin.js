@@ -22,7 +22,7 @@ export default function (props) {
               </div>
               <div class="d-flex justify-content-between align-items-center mb-5">
                 <a
-                  class="btn login-btn" href="/homeUser" >Login</a>
+                  class="btn login-btn" href="/homescreen" >Login</a>
                 
               </div>
             </form>

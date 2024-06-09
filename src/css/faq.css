@@ -105,6 +105,26 @@
 }
 
 /* ===========================
+   Search  Styles
+   =========================== */
+
+.search{
+  margin-top: 10px;
+  color: white;
+  border: 1px solid;
+  border-radius: 20px;
+  width: 650px;
+  height: 50px;
+  background-color: #DCDCDC;
+  padding-left: 10px;
+}
+.search::placeholder {
+  color: white;
+}
+.bi bi-search{
+  padding: right 40px; ;
+}
+/* ===========================
    Tab Navigation Styles
    =========================== */
 .tab-navigation {
