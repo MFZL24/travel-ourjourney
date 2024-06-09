@@ -200,6 +200,110 @@ const Hotels = () => {
               </div>
               {/* Add more hotel cards as needed */}
             </div>
+              <div className="hotel-list">
+              <div className="hotel-card card mb-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img src={hotel1} className="img-fluid rounded-start" alt="Hotel" />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h3 className="card-title">Pandawa Beach Hotel</h3>
+                      <div className="d-flex justify-content-left align-items-center">
+                        <a className="btn btn-secondary">4.0/5</a>
+                        <h10 className="card-text">Very Good</h10>
+                      </div>
+
+                      <div className="kota-text">
+                        <small className="text-muted">Near Kuta Beach - Kuta (show on map)</small>
+                        <br />
+                      </div>
+
+                      <div className="row room-info p-2 mb-2">
+                        <div className="col-7 left">
+                          <div>
+                            <h10>Type Room : Standard Room</h10>
+                          </div>
+                          <div>
+                            <h10>Benefit : Breakfast Included</h10>
+                          </div>
+                          <div className="red">
+                            <h10>Facility : Only 1 room left, bathroom</h10>
+                          </div>
+                        </div>
+
+                        <div className="col-5 right">
+                          <a className="btn btn-danger">20% OFF</a>
+                          <p className="">
+                            <h5>
+                              <b>Price: </b> Rp 1,500,000
+                            </h5>
+                          </p>
+                          <div className="d-flex justify-content-end align-items-center">
+                            <a href="/payment" type="button" className="btn btn-primary btn-sm">
+                              Book Now
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Add more hotel cards as needed */}
+            </div>
+              <div className="hotel-list">
+              <div className="hotel-card card mb-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img src={hotel1} className="img-fluid rounded-start" alt="Hotel" />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h3 className="card-title">Pandawa Beach Hotel</h3>
+                      <div className="d-flex justify-content-left align-items-center">
+                        <a className="btn btn-secondary">4.0/5</a>
+                        <h10 className="card-text">Very Good</h10>
+                      </div>
+
+                      <div className="kota-text">
+                        <small className="text-muted">Near Kuta Beach - Kuta (show on map)</small>
+                        <br />
+                      </div>
+
+                      <div className="row room-info p-2 mb-2">
+                        <div className="col-7 left">
+                          <div>
+                            <h10>Type Room : Standard Room</h10>
+                          </div>
+                          <div>
+                            <h10>Benefit : Breakfast Included</h10>
+                          </div>
+                          <div className="red">
+                            <h10>Facility : Only 1 room left, bathroom</h10>
+                          </div>
+                        </div>
+
+                        <div className="col-5 right">
+                          <a className="btn btn-danger">20% OFF</a>
+                          <p className="">
+                            <h5>
+                              <b>Price: </b> Rp 1,500,000
+                            </h5>
+                          </p>
+                          <div className="d-flex justify-content-end align-items-center">
+                            <a href="/payment" type="button" className="btn btn-primary btn-sm">
+                              Book Now
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Add more hotel cards as needed */}
+            </div>
           </div>
         </div>
       </main>
