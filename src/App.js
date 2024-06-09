@@ -12,6 +12,9 @@ import Hotels from "./components/hotels";
 import Signin from "./components/signin";
 import Signup from "./components/signup";
 import SplashScreen from "./components/splashscreen";
+import Bus from "./components/bus";
+import BusPayment1 from "./components/buspayment1";
+import BusPayment2 from "./components/buspayment2";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
       <Route path="/flights" element={<Flights/>} />
       <Route path="/signin" element={<Signin/>} />
       <Route path="/signup" element={<Signup/>} />
+      <Route path="/bus" element={<Bus />} />
+      <Route path="/buspayment1" element={<BusPayment1 />} />
+      <Route path="/buspayment2" element={<BusPayment2 />} />
       {/* Tambahkan route lain sesuai kebutuhan */}
     </Routes>
   );
