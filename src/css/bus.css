@@ -1,47 +1,28 @@
 /* ===========================
-   Bus Styles
+   Home Screen Styles
    =========================== */
 
-   .bus {
-    font-family: Arial, sans-serif;
-    background-size: cover; /* Menutupi seluruh area */
-    background-position: center; /* Pusatkan gambar */
-    transition: background-image 1s ease-in-out; /* Transisi untuk background-image */
-  }
-  
-  .background1 {
-    background-image: url('../assets/img/bg1.png');
-  }
-  
-  .background2 {
-    background-image: url('../assets/img/bg2.png');
-  }
-  
-  .background3 {
-    background-image: url('../assets/img/bg3.png');
-  }
-  
-  .background4 {
-    background-image: url('../assets/img/bg4.png');
-  }
-  
-  .background5 {
-    background-image: url('../assets/img/bg5.png');
-  }
+.home-screen {
+  font-family: Arial, sans-serif;
+  background-image: url("/src/assets/img/homescreen/Pandawa-bg.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
 
 /* ===========================
-   Header Styles
-   =========================== */
+     Header Styles
+     =========================== */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px; /* Menambahkan padding vertikal */
-  background: linear-gradient(to right, #5C8FF3, #0057FF); /* Warna gradasi biru */
-  border-radius: 0; /* Menghilangkan radius di bagian atas */
-  border-bottom-left-radius: 12px; /* Radius sudut bawah kiri */
-  border-bottom-right-radius: 12px; /* Radius sudut bawah kanan */
-  min-height: 100px; /* Menambahkan tinggi minimum */
+  padding: 20px 20px;
+  background: linear-gradient(to right, #5c8ff3, #0057ff);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  min-height: 100px;
 }
 
 .logo {
@@ -52,87 +33,145 @@
 .logo span {
   font-size: 30px;
   font-weight: bold;
-  font-family: 'Gill Sans MT', sans-serif; /* Menggunakan font Gill Sans MT */
-  color: black; /* Warna putih */
-  margin-right: 10px; /* Menambahkan spasi di kanan */
+  font-family: "Gill Sans MT", sans-serif;
+  color: black;
+  margin-right: 10px;
 }
 
 .logo span span {
-  font-size: 32px; /* Ukuran font yang lebih besar */
-  color: black; /* Warna hitam */
-  display: inline-flex; /* Menggunakan flexbox */
-  align-items: center; /* Menengahkan konten secara vertikal */
-  justify-content: center; /* Menengahkan konten secara horizontal */
-  width: 40px; /* Lebar lingkaran */
-  height: 40px; /* Tinggi lingkaran */
-  border-radius: 50%; /* Membuat bentuk bulat */
-  background-color: #FFFFFF; /* Warna latar belakang putih */
-  margin-left: 5px; /* Menambahkan spasi di kiri */
+  font-size: 32px;
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-left: 5px;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 0; /* Mengurangi padding bawah menjadi 0 untuk menaikkan garis */
-  border-bottom: 1px solid #fff; /* Menambahkan garis bawah */
-  padding-left: 100px; /* Menghilangkan padding tambahan di kiri */
-  padding-right: 0; /* Menghilangkan padding di kanan agar garis menyentuh header */
+  padding-left: 100px;
+  padding-right: 0;
 }
 
 .nav-bar a {
   text-decoration: none;
   color: #fff;
-  margin: 5px 20px; /* Mengurangi margin atas dan bawah menjadi 5px */
+  margin: 5px 20px;
   padding: 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
-  font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
-  font-size: 18px; /* Mengatur ukuran font menjadi 18px */
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
 }
+
 .nav-bar a:hover {
-  text-decoration: underline; /* Menambahkan garis bawah saat hover */
+  text-decoration: underline;
 }
 
 /* ===========================
-   Start New Section Styles
-   =========================== */
+     Start New Section Styles
+     =========================== */
+
 .StartNew {
   margin-top: 50px;
-  font-family: 'hanuman'; /* Menggunakan font Hanuman */
-  font-size: 40px; /* Menyesuaikan ukuran font sesuai kebutuhan */
-  color: white; /* Menyesuaikan warna teks sesuai kebutuhan */
+  font-family: "hanuman";
+  font-size: 40px;
+  color: white;
   font-weight: bold;
 }
 
 /* ===========================
-   Tab Navigation Styles
-   =========================== */
-.tab-navigation {
-  display: flex; /* Mengatur tampilan menjadi flex */
-  justify-content: center; /* Menengahkan konten secara horizontal */
-  align-items: center; /* Menengahkan konten secara vertikal */
-  margin-top: 30px; /* Memberikan margin atas 30px */
-  margin-bottom: -15px; /* Menghilangkan margin bawah */
-  background: linear-gradient(to right, #5C8FF3, #0057FF);
-  border-radius: 30px 30px 30px 30px ; /* Membuat sudut bulat dengan radius 30px di atas */
-  padding: 5px; /* Memberikan padding sebesar 5px */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Memberikan bayangan pada kotak */
-  width: 80%; /* Mengatur lebar menjadi 80% */
-  margin-left: auto; /* Menambahkan margin kiri otomatis */
-  margin-right: auto; /* Menambahkan margin kanan otomatis */
-  position: relative; /* Menambahkan posisi relatif untuk z-index */
-  z-index: 10; /* Menambahkan z-index untuk memastikan tab di atas */
-}
-.tab-navigation a {
-  text-decoration: none; /* Menghilangkan dekorasi teks */
-  color: white; /* Warna teks hitam */
-  padding: 10px 50px; /* Memberikan padding vertikal 10px dan horizontal 20px */
-  border-radius: 20px; /* Membuat sudut bulat dengan radius 20px */
-  margin: 0 20px; /* Memberikan margin horizontal 5px */
-  transition: background 0.3s, color 0.3s; /* Transisi warna latar dan teks selama 0.3 detik */
+     Bus Options Styles
+     =========================== */
+
+.bus-options-container {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  text-align: left;
 }
 
-.tab-navigation a:hover {
-  background: #fff; /* Warna latar belakang putih saat hover */
-  color: black; /* Warna teks biru tua saat hover */
+.filters-container {
+  width: 25%;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bus-date {
+  padding: 20px;
+}
+
+.bus-options {
+  width: 70%;
+}
+
+.days-slider {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.day-option {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.day-option.selected {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.day-option p {
+  margin: 0;
+  color: white;
+}
+
+.bus-list {
+  margin-top: 20px;
+}
+
+.bus-option {
+  /* background: rgba(0, 0, 0, 0.2); */
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
+  /* color: black; */
+}
+
+/* .bus-info {
+  display: flex;
+} */
+
+.bus-info h5 {
+  margin: 0;
+  font-size: 18px;
+  color: black;
+  /* color: #fff; */
+}
+
+.bus-info p {
+  margin: 5px 0;
+  color: black;
+  /* color: #ddd; */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }

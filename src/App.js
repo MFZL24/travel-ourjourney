@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Bus from "./components/bus";
+import BusPayment1 from "./components/buspayment1";
+import BusPayment2 from "./components/buspayment2";
 import Contact from "./components/contact";
 import Destinations from "./components/destinations";
 import Faq from "./components/faq";
@@ -23,22 +25,22 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<SplashScreen />} />
-        <Route path="/welcome" element={<Welcome />} />
-        <Route path="/homescreen" element={<HomeScreen />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/hotels" element={<Hotels/>} />
-        <Route path="/bus" element={<Bus/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/destinations" element={<Destinations/>} />
-        <Route path="/flights" element={<Flights/>} />
-        <Route path="/signin" element={<Signin/>} />
-        <Route path="/signup" element={<Signup/>} />
-        {/* Tambahkan route lain sesuai kebutuhan */}
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<SplashScreen />} />
+      <Route path="/welcome" element={<Welcome />} />
+      <Route path="/homescreen" element={<HomeScreen />} />
+      <Route path="/faq" element={<Faq />} />
+      <Route path="/hotels" element={<Hotels/>} />
+      <Route path="/bus" element={<Bus/>} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/destinations" element={<Destinations/>} />
+      <Route path="/flights" element={<Flights/>} />
+      <Route path="/signin" element={<Signin/>} />
+      <Route path="/signup" element={<Signup/>} />
+      <Route path="/buspayment1" element={<BusPayment1/>} />
+      <Route path="/buspayment2" element={<BusPayment2/>} />
+      {/* Tambahkan route lain sesuai kebutuhan */}
+    </Routes>
   );
 }
 export default App;
