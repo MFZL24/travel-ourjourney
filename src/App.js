@@ -13,6 +13,7 @@ import Hotels from "./components/hotels";
 import Signin from "./components/signin";
 import Signup from "./components/signup";
 import SplashScreen from "./components/splashscreen";
+import History from "./components/history";
 
 function App() {
   const [data, setData] = useState([]);
@@ -39,6 +40,7 @@ function App() {
       <Route path="/signup" element={<Signup/>} />
       <Route path="/buspayment1" element={<BusPayment1/>} />
       <Route path="/buspayment2" element={<BusPayment2/>} />
+      <Route path="/history" element={<History />} />
       {/* Tambahkan route lain sesuai kebutuhan */}
     </Routes>
   );
