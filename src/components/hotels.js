@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // Pastikan Bootstrap CSS diimpor
 // import React from "react";
 // import pandawaBeach from "../assets/img/homescreen/pandawa-beach.png";
+import React, { useState } from "react";
 import hotel1 from "../assets/img/hotel/hotel-1.jpeg";
 import "../css/hotels.css"; // Pastikan ini mengarah ke file CSS yang benar
-import React, { useState } from "react";
 
 const Hotels = () => {
   const [priceRange, setPriceRange] = useState([0, 10000000]);
@@ -52,9 +52,7 @@ const Hotels = () => {
       <main className="container mt-4">
         <div className="tab-navigation ">
           <a href="/destination">Destinations</a>
-          <a href="/hotels" className="btn active">
-            Hotels
-          </a>
+          <a href="/hotels">Hotels</a>
           <a href="/flights">Flight</a>
           <a href="/bus">Bus</a>
         </div>

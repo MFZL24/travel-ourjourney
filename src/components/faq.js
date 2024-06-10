@@ -33,6 +33,7 @@ const FAQ = () => {
       <main className="container text-center mt-4">
         <h1 className='StartNew'>We're here to help<span>6</span></h1>
         <input className='search' type="text" placeholder="Search help" />
+        <i className="bi bi-search"></i>
       
         <div className="tab-navigation">
           <a href="/destinations">Destinations</a>
