@@ -144,6 +144,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 60px; /* Mengurangi margin atas untuk menempelkan form ke tab navigasi */
   background: #fff;
   border-radius: 10px 20px 10px 20px; /* Membuat sudut bulat dengan radius 20px di bawah */
@@ -161,19 +162,31 @@
   width: 320px;
   height: 300px;
   margin-bottom: 20px; /* Menambahkan margin bawah sebesar 20px */
-  margin-top: -460px; /* Menggeser gambar ke atas */
+  margin-top: -200px; /* Menggeser gambar ke atas */
 }
 
-.contact form-group,
-.contact input{
-  margin-top: 100px;
-  border: 2px solid #5C8FF3;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0 5px;
-  font-size: 16px;
+.form-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.form-control {
+  width: 100%;
+  margin-bottom: 15px; /* Menambahkan jarak antara setiap form control */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea.form-control {
+  height: 100px;
+  resize: vertical;
+}
+/* ===========================
+   seacrh Section Styles
+   =========================== */
 .search-form input,
 .search-form button {
   border: 2px solid #5C8FF3;

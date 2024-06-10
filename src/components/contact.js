@@ -33,7 +33,7 @@ const Contact = () => {
 
       <main className="container text-center mt-10">
         <div className="contact">
-        <img src={contact} alt="contact" className="img-fluid rounded-3" />
+          <div><img src={contact} alt="contact" className="img-fluid rounded-3" /></div>
         <div className="form-group">
               <input type="text" className="form-control" placeholder="Name" />
               <input type="email" className="form-control" placeholder="Email" />

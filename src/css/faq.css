@@ -115,15 +115,14 @@
   border-radius: 20px;
   width: 780px;
   height: 50px;
-  background-color: #DCDCDC;
+  background-color: #fcfbfb8f;
   padding-left: 10px;
 }
 .search::placeholder {
   color: white;
 }
-.search input {
-  padding-right: 30px; /* Sesuaikan dengan lebar ikon */
-}
+
+
 
 /* ===========================
    Tab Navigation Styles
@@ -197,6 +196,7 @@
   background: #0057FF;
   color: #fff;
 }
+
 
 /* ===========================
    Recommended Section Styles
@@ -343,7 +343,6 @@
   width: 40px; /* Lebar item */
   height: 40px; /* Tinggi item */
   background-color: #0057FF; /* Warna latar belakang putih */
-  border: 1px solid #fff; /* Bingkai dengan warna biru */
   border-radius: 50%; /* Membuat bentuk bulat */
   display: flex; /* Menggunakan flexbox untuk layout */
   justify-content: center; /* Menengahkan konten secara horizontal */
@@ -354,12 +353,11 @@
 }
 
 .slider ul li.active {
-  background-color: #fff; /* Warna latar belakang biru untuk item aktif */
   color: #0057FF; /* Warna teks putih untuk item aktif */
 }
 
 .slider ul li:hover {
-  background-color: #fff; /* Warna latar belakang biru saat hover */
+
   color: #0057FF; /* Warna teks putih saat hover */
 }
 
@@ -391,13 +389,21 @@
 .faq-item button {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 50px;
   cursor: pointer;
+  color: #8D8D8D;
+  font-weight: bold;
 }
 .faq-section h1{
   margin-top: 100px;
   text-align: left;
 }
+
+  .send-message button{
+    background-color: #980505;
+  }
+
+
 
 
 
