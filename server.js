@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'password',  // Ganti dengan password MySQL Anda
+  password: '',  // Ganti dengan password MySQL Anda
   database: 'db_travel'
 });
 
