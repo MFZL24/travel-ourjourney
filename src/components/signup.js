@@ -13,7 +13,7 @@ export default function Signup(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         // Validasi form
         if (!firstName || !lastName || !username || !email || !password || !confirmPassword) {
             setError('Please fill in all fields');
@@ -27,14 +27,14 @@ export default function Signup(props) {
 
         // Kirim data signup ke server
         try {
-            const response = await fetch('/api/signup', {
+            const response = await fetch('http://localhost:5000/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    first_name: firstName, // Sesuaikan dengan nama kolom yang diharapkan oleh server
-                    last_name: lastName, // Sesuaikan dengan nama kolom yang diharapkan oleh server
+                    first_name: firstName,
+                    last_name: lastName,
                     username,
                     email,
                     password,
@@ -44,13 +44,14 @@ export default function Signup(props) {
             if (response.ok) {
                 console.log('User signed up successfully');
                 // Redirect user to login page or display success message
+                props.history.push('/signin');
             } else {
                 const data = await response.json();
                 setError(data.message); // Tampilkan pesan kesalahan dari server
             }
         } catch (error) {
             console.error('Error signing up:', error);
-            setError('masih ada kesalahan , coba ulangi kembali.');
+            setError('An error occurred, please try again.');
         }
     };
 
@@ -58,6 +59,7 @@ export default function Signup(props) {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-sm-6 col-md-6 intro-section">
+                    {/* You can add an introductory image or text here */}
                 </div>
                 <div className="col-sm-6 col-md-6 form-section mt-5">
                     <div className="login-wrapper">
@@ -104,7 +106,7 @@ export default function Signup(props) {
                             <div className="d-flex justify-content-between align-items-center mb-3">
                                 <button type="submit" className="btn login-btn">Sign Up</button>
                             </div>
-                            <center><a href="/signin" className="textlog">Sudah Memiliki Akun?</a></center>
+                            <center><a href="/signin" className="textlog">Already have an account?</a></center>
                         </form>
                     </div>
                 </div>

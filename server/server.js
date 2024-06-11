@@ -1,47 +1,68 @@
 const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2');
+const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
-const mysql = require('mysql');
 
 const app = express();
-const port = 3001;
+const port = 5000;
 
-// Konfigurasi koneksi ke database MySQL
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const db = mysql.createConnection({
   host: 'localhost',
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  user: 'root',
+  password: 'password',  // Ganti dengan password MySQL Anda
+  database: 'db_travel'
 });
 
-// Koneksikan ke database MySQL
-db.connect((err) => {
+db.connect(err => {
   if (err) {
-    console.error('Error connecting to database:', err);
-    throw err;
+    console.error('Error connecting to MySQL:', err);
+    return;
   }
-  console.log('Connected to database');
+  console.log('Connected to MySQL');
 });
 
-// Middleware untuk parsing body dari permintaan HTTP
-app.use(bodyParser.json());
+// Endpoint signup
+app.post('/signup', async (req, res) => {
+  const { name, email, password } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
 
-// Endpoint untuk signup
-app.post('/api/signup', async (req, res) => {
-  const { first_name, last_name, username, email, password } = req.body; // Sesuaikan dengan nama kolom dalam database
-
-  try {
-    // Simpan data pengguna baru ke dalam tabel 'users' di database
-    const insertUser = 'INSERT INTO users (first_name, last_name, username, email, password) VALUES (?, ?, ?, ?, ?)';
-    await db.query(insertUser, [first_name, last_name, username, email, password]); // Sesuaikan dengan nama variabel yang diambil dari req.body
-    console.log('User signed up successfully');
-    res.status(200).json({ message: 'Signup successful' });
-  } catch (err) {
-    console.error('Error signing up:', err.message); // Menampilkan pesan kesalahan yang lebih spesifik
-    res.status(500).json({ message: 'Internal server error' });
-  }
+  const sql = 'INSERT INTO tb_user (name, email, password) VALUES (?, ?, ?)';
+  db.query(sql, [name, email, hashedPassword], (err, result) => {
+    if (err) {
+      return res.status(500).send('Error registering user');
+    }
+    res.status(200).send('User registered successfully');
+  });
 });
 
-// Mulai server
+// Endpoint signin
+app.post('/signin', (req, res) => {
+  const { email, password } = req.body;
+
+  const sql = 'SELECT * FROM tb_user WHERE email = ?';
+  db.query(sql, [email], async (err, results) => {
+    if (err) {
+      return res.status(500).send('Error signing in');
+    }
+    if (results.length === 0) {
+      return res.status(401).send('User not found');
+    }
+
+    const user = results[0];
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(401).send('Invalid password');
+    }
+
+    res.status(200).send('User signed in successfully');
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
