@@ -2,42 +2,46 @@
    Home Screen Styles
    =========================== */
 
-   .home-screen {
-    font-family: Arial, sans-serif;
-    background-size: cover; /* Menutupi seluruh area */
-    background-position: center; /* Pusatkan gambar */
-    transition: background-image 1s ease-in-out; /* Transisi untuk background-image */
-  }
-  
-  .background1 {
-    background-image: url('../assets/img/bg1.png');
-  }
-  
-  .background2 {
-    background-image: url('../assets/img/bg2.png');
-  }
-  
-  .background3 {
-    background-image: url('../assets/img/bg3.png');
-  }
-  
-  .background4 {
-    background-image: url('../assets/img/bg4.png');
-  }
-  
-  .background5 {
-    background-image: url('../assets/img/bg5.png');
-  }
+.home-screen {
+  font-family: Arial, sans-serif;
+  background-size: cover; /* Menutupi seluruh area */
+  background-position: center; /* Pusatkan gambar */
+  transition: background-image 1s ease-in-out; /* Transisi untuk background-image */
+}
+
+.background1 {
+  background-image: url("../assets/img/bg1.png");
+}
+
+.background2 {
+  background-image: url("../assets/img/bg2.png");
+}
+
+.background3 {
+  background-image: url("../assets/img/bg3.png");
+}
+
+.background4 {
+  background-image: url("../assets/img/bg4.png");
+}
+
+.background5 {
+  background-image: url("../assets/img/bg5.png");
+}
 
 /* ===========================
    Header Styles
    =========================== */
+
+.container {
+  padding-top: 90px;
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px; /* Menambahkan padding vertikal */
-  background: linear-gradient(to right, #5C8FF3, #0057FF); /* Warna gradasi biru */
+  background: linear-gradient(to right, #5c8ff3, #0057ff); /* Warna gradasi biru */
   border-radius: 0; /* Menghilangkan radius di bagian atas */
   border-bottom-left-radius: 12px; /* Radius sudut bawah kiri */
   border-bottom-right-radius: 12px; /* Radius sudut bawah kanan */
@@ -52,7 +56,7 @@
 .logo span {
   font-size: 30px;
   font-weight: bold;
-  font-family: 'Gill Sans MT', sans-serif; /* Menggunakan font Gill Sans MT */
+  font-family: "Gill Sans MT", sans-serif; /* Menggunakan font Gill Sans MT */
   color: black; /* Warna putih */
   margin-right: 10px; /* Menambahkan spasi di kanan */
 }
@@ -66,7 +70,7 @@
   width: 40px; /* Lebar lingkaran */
   height: 40px; /* Tinggi lingkaran */
   border-radius: 50%; /* Membuat bentuk bulat */
-  background-color: #FFFFFF; /* Warna latar belakang putih */
+  background-color: #ffffff; /* Warna latar belakang putih */
   margin-left: 5px; /* Menambahkan spasi di kiri */
 }
 
@@ -86,10 +90,18 @@
   padding: 10px;
   border-radius: 4px;
   transition: background-color 0.3s;
-  font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
+  font-family: "Inter", sans-serif; /* Menggunakan font Inter */
   font-size: 18px; /* Mengatur ukuran font menjadi 18px */
 }
+
+.nav-bar .home {
+  background: white;
+  color: #0057ff;
+}
+
 .nav-bar a:hover {
+  /* background: white;
+  color: white; */
   text-decoration: underline; /* Menambahkan garis bawah saat hover */
 }
 
@@ -98,7 +110,7 @@
    =========================== */
 .StartNew {
   margin-top: 50px;
-  font-family: 'hanuman'; /* Menggunakan font Hanuman */
+  font-family: "hanuman"; /* Menggunakan font Hanuman */
   font-size: 40px; /* Menyesuaikan ukuran font sesuai kebutuhan */
   color: white; /* Menyesuaikan warna teks sesuai kebutuhan */
   font-weight: bold;
@@ -113,8 +125,8 @@
   align-items: center; /* Menengahkan konten secara vertikal */
   margin-top: 30px; /* Memberikan margin atas 30px */
   margin-bottom: -15px; /* Menghilangkan margin bawah */
-  background: linear-gradient(to right, #5C8FF3, #0057FF);
-  border-radius: 30px 30px 30px 30px ; /* Membuat sudut bulat dengan radius 30px di atas */
+  background: linear-gradient(to right, #5c8ff3, #0057ff);
+  border-radius: 30px 30px 30px 30px; /* Membuat sudut bulat dengan radius 30px di atas */
   padding: 5px; /* Memberikan padding sebesar 5px */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Memberikan bayangan pada kotak */
   width: 80%; /* Mengatur lebar menjadi 80% */
@@ -145,7 +157,7 @@
   justify-content: center;
   align-items: center;
   margin-top: -5px; /* Mengurangi margin atas untuk menempelkan form ke tab navigasi */
-  background: #fff;
+  background: #0057ff;
   border-radius: 10px 20px 10px 20px; /* Membuat sudut bulat dengan radius 20px di bawah */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -158,7 +170,7 @@
 
 .search-form input,
 .search-form button {
-  border: 2px solid #5C8FF3;
+  border: 2px solid #5c8ff3;
   border-radius: 10px;
   padding: 10px;
   margin: 0 5px;
@@ -166,14 +178,19 @@
 }
 
 .search-form button {
-  background: #fff;
-  color: #0057FF;
+  background: #0057ff;
+  color: #fff;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 
+.search-form .btn-primary {
+  background: #0057ff;
+  color: #fff;
+}
+
 .search-form button:hover {
-  background: #0057FF;
+  background: #0057ff;
   color: #fff;
 }
 
@@ -204,14 +221,18 @@
 .recommended-section .text-content {
   flex: 1; /* Mengatur teks untuk mengambil ruang yang tersedia */
   margin-right: 20px; /* Memberikan jarak antara teks dan gambar */
+  color: white;
 }
 
 .recommended-section h2 {
   font-family: hanuman;
   font-weight: bold;
   margin-left: 80px;
-  color: white;
 }
+
+/* .recommended-sectio .card-group {
+  background: red;
+} */
 
 .recommended-section .judul {
   margin-left: 80px;
@@ -223,15 +244,15 @@
 }
 
 @font-face {
-  font-family: 'Humanist777CondensedBT';
-  src: url('../assets/font/Humanist777CondensedBT.ttf') format('truetype');
+  font-family: "Humanist777CondensedBT";
+  src: url("../assets/font/Humanist777CondensedBT.ttf") format("truetype");
 }
 
 .recommended-section h3 {
   margin-left: 80px;
   margin-top: 50px;
   color: #fff; /* Mengatur warna teks menjadi putih */
-  font-family: 'Humanist777CondensedBT', sans-serif; /* Menggunakan font Humanist777CondensedBT */
+  font-family: "Humanist777CondensedBT", sans-serif; /* Menggunakan font Humanist777CondensedBT */
   font-weight: bold;
   font-size: 63px;
 }
@@ -239,8 +260,8 @@
 .recommended-section .paragraf {
   margin-left: 80px;
   font-size: 23px;
-  color: #DCDCDC;
-  font-family: 'Inter'; /* Memastikan font family ditulis dengan benar */
+  color: #dcdcdc;
+  font-family: "Inter"; /* Memastikan font family ditulis dengan benar */
   margin-top: -10px;
 }
 
@@ -256,18 +277,17 @@
   border-radius: 10px;
 }
 
-
 /* ===========================
    button Section Styles
    =========================== */
-
 
 .bordered-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px; /* Menambahkan padding */
-  background: linear-gradient(to right, #5C8FF3, #0057FF); /* Warna gradasi biru */
+  /* background: linear-gradient(to right, #5c8ff3, #0057ff); */
+  background: #0057ff;
   border-radius: 0; /* Menghilangkan radius di bagian atas */
   border-bottom-left-radius: 30px; /* Radius sudut bawah kiri */
   border-bottom-right-radius: 30px; /* Radius sudut bawah kanan */
@@ -281,12 +301,17 @@
   z-index: 1; /* Menambahkan z-index untuk memastikan elemen di bawah */
   margin-top: 0;
 }
-.bordered-div button{
+.bordered-div button {
   color: white;
   margin-left: 80px;
   position: relative;
   top: -10px; /* Menggerakkan tombol ke atas */
   transition: color 0.3s; /* Menambahkan transisi untuk efek hover */
+}
+
+.bordered-div .btn-primary {
+  background: #0057ff;
+  color: #fff;
 }
 
 .bordered-div button:hover {
@@ -302,7 +327,7 @@
 }
 
 .slider::before {
-  content: ''; /* Konten kosong untuk pseudo-element */
+  content: ""; /* Konten kosong untuk pseudo-element */
   position: absolute; /* Posisi absolut terhadap elemen induk */
   top: 50%; /* Posisi dari atas setengah dari tinggi induk */
   left: -40%; /* Posisi dari kiri, lebih panjang */
@@ -318,13 +343,12 @@
   padding: 0; /* Menghilangkan padding */
   position: relative; /* Mengatur posisi relatif terhadap kontainer */
   z-index: 1; /* Z-index untuk layering di atas ::before */
-  color: white;
 }
 
 .slider ul li {
   width: 40px; /* Lebar item */
   height: 40px; /* Tinggi item */
-  background-color: #0057FF; /* Warna latar belakang putih */
+  background-color: #0057ff; /* Warna latar belakang putih */
   border: 1px solid #fff; /* Bingkai dengan warna biru */
   border-radius: 50%; /* Membuat bentuk bulat */
   display: flex; /* Menggunakan flexbox untuk layout */
@@ -337,17 +361,13 @@
 
 .slider ul li.active {
   background-color: #fff; /* Warna latar belakang biru untuk item aktif */
-  color: #0057FF; /* Warna teks putih untuk item aktif */
+  color: #0057ff; /* Warna teks putih untuk item aktif */
 }
 
 .slider ul li:hover {
   background-color: #fff; /* Warna latar belakang biru saat hover */
-  color: #0057FF; /* Warna teks putih saat hover */
+  color: #0057ff; /* Warna teks putih saat hover */
 }
-
-
-
-
 
 /* ===========================
    Services Section Styles
@@ -362,7 +382,7 @@
 .services-section h2 {
   font-size: 2em;
   margin-bottom: 20px;
-  font-family: 'Hanuman', serif; /* Menggunakan font Hanuman */
+  font-family: "Hanuman", serif; /* Menggunakan font Hanuman */
 }
 
 .services-container {
@@ -372,7 +392,7 @@
 }
 
 .service-box {
-  background: #BAD6FF; /* Latar belakang putih dengan transparansi */
+  background: #bad6ff; /* Latar belakang putih dengan transparansi */
   color: #333;
   padding: 20px;
   margin: 10px;
@@ -382,8 +402,8 @@
 }
 
 .service-box img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
 }
 
