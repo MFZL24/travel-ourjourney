@@ -38,8 +38,8 @@
 }
 
 /* ===========================
-     Tab Navigation Styles
-     =========================== */
+   Tab Navigation Styles
+   =========================== */
 .tab-navigation {
   display: flex;
   /* Mengatur tampilan menjadi flex */
@@ -92,6 +92,11 @@
   /* Warna teks biru tua saat hover */
 }
 
+.tab-navigation .hotel {
+  background: #fff;
+  color: black;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
@@ -106,6 +111,11 @@
   margin-right: 10px;
 }
 
+.search-form .btn-dark {
+  background-color: #007bff;
+  color: #fff;
+}
+
 .filter-section {
   background: #f8f9fa;
   border-radius: 10px;
@@ -115,7 +125,7 @@
 }
 
 /* .filter-section .price {
-    } */
+  } */
 
 .filter-section h4 {
   margin-bottom: 10px;
@@ -130,17 +140,30 @@
   flex-direction: column;
 }
 
+.bus-option {
+  /* background: rgba(0, 0, 0, 0.2); */
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
+  /* color: black; */
+}
+
 .hotel-card {
   border: none;
 }
 
 /* .hotel-card .card-title {
-      padding-bottom: 1px;
-    } */
+    padding-bottom: 1px;
+  } */
 
 .hotel-card .kota-text {
+  /* display: flex; */
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.hotel-card .kota-text .map {
+  color: blue;
 }
 
 p {
@@ -155,9 +178,14 @@ p {
 .hotel-card .room-info {
   margin-left: 2px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
   border-radius: 10px;
+  background: #9e9c9c;
   display: flex;
+}
+
+.price-options .btn {
+  width: 100%;
 }
 
 .hotel-card .room-info .left {
@@ -206,20 +234,23 @@ p {
 }
 
 .hotel-card .btn-danger {
-  background: rgb(218, 17, 17);
-  /* background: linear-gradient(to right, rgb(192, 19, 19), rgb(221, 171, 171)); */
+  background: rgb(221, 27, 27);
   border: none;
   border-radius: 10px;
   padding: 10px;
 }
 
+/* .hotel-card .card-body {
+  background: #333;
+} */
+
 /* .hotel-card .room-info .left {
-      color: red;
-    } */
+    color: red;
+  } */
 
 /* ===========================
-       Destination Section Styles
-       =========================== */
+     Destination Section Styles
+     =========================== */
 .destination-section {
   display: flex;
   /* Mengatur tampilan menjadi flex */
