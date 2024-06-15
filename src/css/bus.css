@@ -11,8 +11,8 @@
 }
 
 /* ===========================
-     Header Styles
-     =========================== */
+       Header Styles
+       =========================== */
 
 .header {
   display: flex;
@@ -73,9 +73,19 @@
   text-decoration: underline;
 }
 
+.tab-navigation .bus {
+  background: #fff;
+  color: black;
+}
+
+.search-form .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
 /* ===========================
-     Start New Section Styles
-     =========================== */
+       Start New Section Styles
+       =========================== */
 
 .StartNew {
   margin-top: 50px;
@@ -86,8 +96,8 @@
 }
 
 /* ===========================
-     Bus Options Styles
-     =========================== */
+       Bus Options Styles
+       =========================== */
 
 .bus-options-container {
   display: flex;
@@ -146,13 +156,16 @@
   /* background: rgba(0, 0, 0, 0.2); */
   background: white;
   border-radius: 5px;
-  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 10px; */
   /* color: black; */
 }
 
-/* .bus-info {
+.bus-info {
   display: flex;
-} */
+  justify-content: space-between;
+}
 
 .bus-info h5 {
   margin: 0;
@@ -165,6 +178,10 @@
   margin: 5px 0;
   color: black;
   /* color: #ddd; */
+}
+
+.bus-option .a {
+  justify-content: end;
 }
 
 .btn-primary {
