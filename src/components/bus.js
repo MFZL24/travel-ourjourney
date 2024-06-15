@@ -7,13 +7,18 @@ const BUS = () => {
   const [priceRange, setPriceRange] = useState([0, 10000000]);
 
   const days = [
-    { date: "Thu, May 30", price: 700000 },
-    { date: "Fri, May 31", price: 750000 },
-    { date: "Sat, Jun 1", price: 800000 },
-    { date: "Sun, Jun 2", price: 850000 },
-    { date: "Mon, Jun 3", price: 900000 },
-    { date: "Tue, Jun 4", price: 950000 },
-    { date: "Wed, Jun 5", price: 1000000 },
+    { date: "Thu, Juni 18", price: 700000 },
+    { date: "Fri, Juni 19", price: 750000 },
+    { date: "Sat, Jun 20", price: 800000 },
+    { date: "Sun, Jun 21", price: 900000 },
+    { date: "Mon, Jun 22", price: 700000 },
+    { date: "Tue, Jun 23", price: 700000 },
+    { date: "Wed, Jun 24", price: 7000000 },
+    { date: "Thu, Jun 25", price: 7000000 },
+    { date: "Fri, Jun 26", price: 7500000 },
+    { date: "Sat, Jun 27", price: 8000000 },
+    { date: "Sun, Jun 28", price: 9000000 },
+    { date: "Mon, Jun 29", price: 700000 },
   ];
 
   const busOptions = [
@@ -26,14 +31,14 @@ const BUS = () => {
 
   return (
     <div className="home-screen">
-      <header className="header">
+      <header className="header fixed-top">
         <div className="logo">
           <span>
             DESTINA<span>6</span>
           </span>
         </div>
         <nav className="nav-bar">
-          <a href="/">Home</a>
+          <a href="/homescreen">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
           <a href="/signin">Sign in</a>
@@ -42,10 +47,12 @@ const BUS = () => {
 
       <main className="container text-center mt-4">
         <div className="tab-navigation">
-          <a href="/destinations">Destinations</a>
-          <a href="/hotels">Hotels</a>
-          <a href="/flights">Flight</a>
-          <a href="/bus">Bus</a>
+          <a href="/destination">Destinations</a>
+          <a href="/hotel">Hotels</a>
+          <a href="/flight">Flight</a>
+          <a href="/bus" className="bus">
+            Bus
+          </a>
         </div>
         <div className="search-form">
           <input type="text" placeholder="Destination" className="form-control me-2" />
@@ -56,7 +63,7 @@ const BUS = () => {
         </div>
 
         <div className="bus-date">
-          <div className="days-slider d-flex justify-content-between">
+          <div className="days-slider d-flex justify-content-between p-4 my-2">
             {days.map((day, index) => (
               <div key={index} className={`day-option ${selectedDay === day.date ? "selected" : ""}`} onClick={() => setSelectedDay(day.date)}>
                 <p>{day.date}</p>
@@ -70,23 +77,27 @@ const BUS = () => {
           <div className="filters-container">
             <div className="price-range box">
               <h5>
-                Price (Rp {priceRange[0].toLocaleString()} - Rp {priceRange[1].toLocaleString()})
+                <b>
+                  Price (Rp {priceRange[0].toLocaleString()} - Rp {priceRange[1].toLocaleString()})
+                </b>
               </h5>
               <input type="range" min="0" max="10000000" step="100000" value={priceRange[1]} onChange={(e) => setPriceRange([priceRange[0], e.target.value])} className="form-range" />
               <div className="price-options d-flex flex-column">
-                <button className="btn btn-outline-dark mb-2" onClick={() => setPriceRange([0, 300000])}>
+                <button className="btn btn-dark mb-2" onClick={() => setPriceRange([0, 300000])}>
                   Rp 0 - Rp 300,000
                 </button>
-                <button className="btn btn-outline-dark mb-2" onClick={() => setPriceRange([0, 500000])}>
-                  Rp 0 - Rp 500,000
+                <button className="btn btn-dark mb-2" onClick={() => setPriceRange([0, 5000000])}>
+                  Rp 0 - Rp 5,000,000
                 </button>
-                <button className="btn btn-outline-dark" onClick={() => setPriceRange([0, 10000000])}>
+                <button className="btn btn-dark" onClick={() => setPriceRange([0, 10000000])}>
                   Rp 0 - Rp 10,000,000
                 </button>
               </div>
             </div>
             <div className="bus-companies box mt-3">
-              <h5>All Bus Companies</h5>
+              <h5>
+                <b>All Bus Companies</b>
+              </h5>
               <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="busCompany1" />
                 <label className="form-check-label" htmlFor="busCompany1">
@@ -122,20 +133,23 @@ const BUS = () => {
           </div>
 
           <div className="bus-options">
-            <div className="bus-list mt-4">
+            <div className="bus-list mt-2">
               {busOptions.map((bus, index) => (
-                <div key={index} className="bus-option d-flex justify-content-between align-items-center p-3 my-2">
-                  <div className="bus-info">
+                <div key={index} className="bus-option align-items-center p-5 my-2">
+                  <div className="bus-info align-items-center">
                     <h5>{bus.name}</h5>
-                    <p>Keberangkatan {bus.time}</p>
-                    <p>IDR {bus.price.toLocaleString()}</p>
+                    <td>
+                      <p>Keberangkatan {bus.time}</p>
+                    </td>
+                    <td>
+                      <p>
+                        <b>IDR {bus.price.toLocaleString()}</b>
+                      </p>
+                    </td>
                   </div>
-                  <a href="/buspayment1" type="button" className="btn btn-primary btn-sm">
+                  <a href="/signin" type="button" className="btn btn-primary">
                     Book
                   </a>
-                  {/* <button href="/payment" className="btn btn-primary">
-                    Book
-                  </button> */}
                 </div>
               ))}
             </div>
