@@ -1,11 +1,34 @@
 // src/components/BusPayment.js
-import React from "react";
-import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Card, Form, Button, Image } from "react-bootstrap";
+import bri from "../assets/img/payment/bri-logo.png";
+import bni from "../assets/img/payment/bni.png";
+import cimbniaga from "../assets/img/payment/cimb-niaga.jpeg";
+import mandiri from "../assets/img/payment/mandiri.png";
+import bca from "../assets/img/payment/bca.png";
+import visa from "../assets/img/payment/visa.png";
+import mastercard from "../assets/img/payment/master-card.png";
+import americanexpress from "../assets/img/payment/american-express.jpeg";
+import paypal from "../assets/img/payment/paypal.png";
+import ovo from "../assets/img/payment/ovo.png";
 import "../css/buspayment.css"; // Pastikan file CSS ini ada
 
 const BusPayment = () => {
+  const [background, setBackground] = useState("background1");
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setBackground((prev) => {
+        const nextBackground = (parseInt(prev.slice(-1), 10) % 5) + 1; // Rotasi dari background1 sampai background5
+        return `background${nextBackground}`;
+      });
+    }, 5000); // Ganti background setiap 5 detik
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <div className="home-screen">
+    <div className={`home-screen ${background}`}>
       <header className="header">
         <div className="logo">
           <span>
@@ -13,82 +36,99 @@ const BusPayment = () => {
           </span>
         </div>
         <nav className="nav-bar">
-          <a href="/">Home</a>
+          <a href="homeUser">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
-          <a href="/signin">Sign in</a>
+          <a href="/profile">My Profile</a>
         </nav>
       </header>
 
-      <Container className="bus-payment mt-5">
+      <Container className="bus-payment mt-5 p-5">
         <Row>
           <Col md={8}>
-            <Card className="mb-3">
+            <Card className="mb-3 pb-3">
               <Card.Header>
-                <h5>Select a Payment Method</h5>
+                <h5>
+                  <b>Select a Payment Method</b>
+                </h5>
               </Card.Header>
               <Card.Body>
-                <div className="payment-method">
-                  <h6>Bank Transfer</h6>
-                  <div className="bank-options">
-                    {/* <Image src="/img/payment/bri-logo.png" alt="BRI" className="bank-logo" />
-                    <Image src="/path/to/bri-logo.png" alt="BNI" className="bank-logo" />
-                    <Image src="/path/to/bri-logo.png" alt="CIMB Niaga" className="bank-logo" />
-                    <Image src="/path/to/bri-logo.png" alt="Mandiri" className="bank-logo" />
-                    <Image src="/path/to/bri-logo.png" alt="BCA" className="bank-logo" /> */}
+                <div className="payment-method p-2">
+                  <div className="option-box">
+                    <div className="option-text text-muted">
+                      <span>Bank Transfer</span>
+                    </div>
+                    <div className="option-logos">
+                      <Image src={bri} alt="BRI" className="bank-logo" />
+                      <Image src={bni} alt="BNI" className="bank-logo" />
+                      <Image src={cimbniaga} alt="CIMB Niaga" className="bank-logo" />
+                      <Image src={mandiri} alt="Mandiri" className="bank-logo" />
+                      <Image src={bca} alt="BCA" className="bank-logo" />
+                    </div>
                   </div>
                 </div>
-                <div className="payment-method">
-                  <h6>Credit/Debit Card</h6>
-                  <div className="card-options">
-                    {/* <Image src="/path/to/visa-logo.png" alt="Visa" className="card-logo" />
-                    <Image src="/path/to/mastercard-logo.png" alt="Mastercard" className="card-logo" />
-                    <Image src="/path/to/amex-logo.png" alt="American Express" className="card-logo" />
-                    <Image src="/path/to/paypal-logo.png" alt="Paypal" className="card-logo" /> */}
+                <div className="payment-method p-2">
+                  <div className="option-box">
+                    <div className="option-text text-muted">
+                      <span>Credit/Debit Card</span>
+                    </div>
+                    <div className="option-logos">
+                      <Image src={visa} alt="Visa" className="card-logo" />
+                      <Image src={mastercard} alt="Mastercard" className="card-logo" />
+                      <Image src={americanexpress} alt="American Express" className="card-logo" />
+                      <Image src={paypal} alt="Paypal" className="card-logo" />
+                    </div>
                   </div>
                 </div>
-                <div className="payment-method">
-                  <h6>OVO</h6>
-                  <div className="ovo-option">{/* <Image src="/path/to/ovo-logo.png" alt="OVO" className="ovo-logo" /> */}</div>
+                <div className="payment-method p-2">
+                  <div className="option-box">
+                    <div className="option-text text-muted">
+                      <span>OVO</span>
+                    </div>
+                    <div className="option-logos">
+                      <Image src={ovo} alt="OVO" className="ovo-logo" />
+                    </div>
+                  </div>
                 </div>
               </Card.Body>
             </Card>
-
-            <Card className="mb-3">
-              <Card.Body>
-                <Row>
-                  <Col>
-                    <h5>Total</h5>
-                  </Col>
-                  <Col className="text-end">
-                    <h5>IDR 150,000</h5>
-                  </Col>
-                </Row>
-                <Button variant="primary" block>
-                  Pay
-                </Button>
-              </Card.Body>
-            </Card>
+            <Button variant="primary" block>
+              Pay
+            </Button>
           </Col>
 
           <Col md={4}>
             <Card>
               <Card.Header>
-                <h5>Price Details</h5>
+                <h5>
+                  <b>Price Details</b>
+                </h5>
               </Card.Header>
               <Card.Body>
                 <Row>
-                  <Col>Ticket (1 adult)</Col>
-                  <Col className="text-end">IDR 150,000</Col>
+                  <Col>
+                    <b>Ticket (1 adult)</b>
+                  </Col>
+                  <Col className="text-end">
+                    <b>IDR 150,000</b>
+                  </Col>
                 </Row>
                 <Row>
-                  <Col>Baggage</Col>
-                  <Col className="text-end">None</Col>
+                  <Col>
+                    <b>Baggage</b>
+                  </Col>
+                  <Col className="text-end">
+                    <b>None</b>
+                  </Col>
                 </Row>
                 <hr />
                 <Row>
-                  <Col>Total</Col>
-                  <Col className="text-end">IDR 150,000</Col>
+                  <Col>
+                    <b>Total</b>
+                  </Col>
+                  <Col className="text-end text-primary">
+                    <b>IDR 150,000</b>
+                  </Col>
                 </Row>
               </Card.Body>
             </Card>
