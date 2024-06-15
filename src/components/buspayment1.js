@@ -6,17 +6,17 @@ import "../css/buspayment.css"; // Pastikan file CSS ini ada
 const BusPayment = () => {
   return (
     <div className="home-screen">
-      <header className="header">
+      <header className="header fixed-top">
         <div className="logo">
           <span>
             DESTINA<span>6</span>
           </span>
         </div>
         <nav className="nav-bar">
-          <a href="/">Home</a>
+          <a href="homeUser">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
-          <a href="/signin">Sign in</a>
+          <a href="/profile">My Profile</a>
         </nav>
       </header>
 
@@ -33,8 +33,10 @@ const BusPayment = () => {
               <Card.Body>
                 <Row>
                   <Col>
-                    <p>17.00 | Bandung</p>
-                    <p>20.30 | Jakarta</p>
+                    <b>
+                      <p>17.00 | Bandung</p>
+                      <p>20.30 | Jakarta</p>
+                    </b>
                   </Col>
                 </Row>
               </Card.Body>
@@ -82,6 +84,9 @@ const BusPayment = () => {
                 <Button href="/buspayment2" variant="primary" block>
                   Pay
                 </Button>
+                <Button className="mt-2" href="/busUser" variant="secondary" block>
+                  Back
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -96,7 +101,7 @@ const BusPayment = () => {
               <Card.Body>
                 <Row>
                   <Col>
-                    <b>Ticket (1 adult)</b>
+                    <b>Tickets (1 Adult)</b>
                   </Col>
                   <Col className="text-end">
                     <b>IDR 150,000</b>
