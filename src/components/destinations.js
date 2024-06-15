@@ -1,33 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // Pastikan Bootstrap CSS diimpor
-import React, { useEffect, useState } from "react";
-// import pandawaBeach from "../assets/img/homescreen/pandawa-beach.png";
-// import hotel1 from "../assets/img/hotel/hotel-1.jpeg";
-import destinations1 from "../assets/img/destinations/destinations-1.jpg";
+// import React from "react";
+import React, { useState } from "react";
+import monas from "../assets/img/destinasi/monas.jpg";
+import tmi from "../assets/img/destinasi/tmi.jpg";
+import kotu from "../assets/img/destinasi/kotu.jpeg";
+import ancol from "../assets/img/destinasi/ancol.jpeg";
 import "../css/destinations.css"; // Pastikan ini mengarah ke file CSS yang benar
 
 const Destinations = () => {
-  const [background, setBackground] = useState("background1");
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setBackground((prev) => {
-        const nextBackground = (parseInt(prev.slice(-1), 10) % 5) + 1; // Rotasi dari background1 sampai background5
-        return `background${nextBackground}`;
-      });
-    }, 5000); // Ganti background setiap 5 detik
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  // const [priceRange, setPriceRange] = useState([0, 10000000]);
-  const [setFilters] = useState({
+  const [priceRange, setPriceRange] = useState([0, 10000000]);
+  const [filters, setFilters] = useState({
     popular: [],
     facilities: [],
   });
 
-  // const handlePriceChange = (e) => {
-  //   setPriceRange([0, parseInt(e.target.value)]);
-  // };
+  const handlePriceChange = (e) => {
+    setPriceRange([0, parseInt(e.target.value)]);
+  };
 
   const handleFilterChange = (e) => {
     const { name, value, checked } = e.target;
@@ -47,81 +36,162 @@ const Destinations = () => {
   };
 
   return (
-    <div className={`home-screen ${background}`}>
-      <header className="header">
+    <div className="home-screen">
+      <header className="header fixed-top">
         <div className="logo">
           <span>
             DESTINA<span>6</span>
           </span>
         </div>
         <nav className="nav-bar">
-          <a href="/homescreen">Home</a>
+          <a href="homescreen">Home</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Contact</a>
           <a href="/signin">Sign in</a>
         </nav>
       </header>
-      <main className="container text-center mt-4">
-        {/* <h1 className="StartNew">
-          We’re here to help<span>6</span>
-        </h1> */}
-        <div className="tab-navigation">
-          <a href="/destinations">Destinations</a>
-          <a href="/hotels">Hotels</a>
-          <a href="/flights">Flight</a>
+      <main className="container mt-4">
+        <div className="tab-navigation ">
+          <a href="#" className="btn-active">
+            Destinations
+          </a>
+          <a href="/hotel">Hotels</a>
+          <a href="/flight">Flight</a>
           <a href="/bus">Bus</a>
         </div>
-        <div className="search-form">
-          <input type="text" placeholder="Jakarta" className="form-control me-2" />
-          // <input type="date" className="form-control me-2" />
-          // <input type="date" className="form-control me-2" />
-          // <input type="text" placeholder="1 room, 2 adults, 0 children" className="form-control me-2" />
+        <div className="search-form mb-4">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search Destination" />
           <button className="btn btn-dark">SEARCH</button>
         </div>
 
-        <div className="row">
-          <div className="col-md-3">
-            <div className="filter-section">
-              <div className="popular">
-                <h4>Popular Filters</h4>
-                <label>
-                  <input type="checkbox" name="popular" value="breakfast" onChange={handleFilterChange} /> Mountain
-                </label>
+        <div class="row">
+          <div class="col-3 ">
+            <div class="card">
+              <div class="card-body">
+                <h7>
+                  <b> Popular Filter </b>
+                </h7>
                 <br />
-                <label>
-                  <input type="checkbox" name="popular" value="payment" onChange={handleFilterChange} /> Ocean
-                </label>
-                <br />
+                <div class="form-check mb-2 mt-3">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Mountain
+                  </label>
+                </div>
+
+                <div class="form-check ">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Ocean
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-md-9">
-            <div className="destinations-list">
-              <div className="destinations-card card mb-4">
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img src={destinations1} className="img-fluid rounded-start" alt="Destinations" />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h3 className="card-title">Monumen Nasional</h3>
-                      <div className="kota-text">
-                        <h10 className="text-muted">Kawasan Monas 10110 Gambir Jakarta (show on map)</h10>
-                      </div>
-                      <div className="monas">
-                        <h10>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                          commodo consequat.
-                        </h10>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <button className="btn btn-outline-primary">Explore</button>
-                        </div>
-                      </div>
-                    </div>
+
+          <div className="col-9 destinasi pt-1">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src={monas} class="img-fluid rounded-start" alt="Destinasi Wisata" />
+                </div>
+                <div class="col-md-9">
+                  <div className="card-body ">
+                    <h7>
+                      <b> Monas (Monumen Nasional) </b>
+                    </h7>{" "}
+                    <br />
+                    <small>
+                      <i class="fa-solid fa-location-dot"></i>Jakarta, Indonesia{" "}
+                    </small>
+                    <p className="paragraf">
+                      The National Monument or what is abbreviated as Monas or Tugu Monas is a 132 meter (433 foot) high memorial monument located right in the middle of Medan Merdeka Square, Central Jakarta. Monas was established to
+                      commemorate the resistance and struggle of the Indonesian people in gaining independence from the colonial government of the Dutch Kingdom.
+                      <br />
+                    </p>
+                    <a href="/signin" type="button" className="btn btn-primary btn-sm">
+                      Explore
+                    </a>
                   </div>
                 </div>
               </div>
-              {/* Add more hotel cards as needed */}
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src={tmi} class="img-fluid rounded-start" alt="Destinasi Wisata" />
+                </div>
+                <div class="col-md-9">
+                  <div className="card-body ">
+                    <h7>
+                      <b> Taman Mini Indonesia Indah </b>
+                    </h7>{" "}
+                    <br />
+                    <small>Jakarta, Indonesia </small>
+                    <p className="paragraf">
+                      Spanning over 250 acres, Taman Mini Indonesia Indah is a cultural park designed to represent the diversity of Indonesia. Each province is depicted with its traditional architecture, complete with intricate details. The
+                      park features numerous museums such as the Museum Indonesia, showcasing traditional costumes and crafts, and the Keong Emas IMAX theater, which screens educational films. The park also hosts various cultural
+                      performances and festivals, making it a vibrant, living museum.
+                      <br />
+                    </p>
+                    <a href="signin" type="button" className="btn btn-primary btn-sm">
+                      Explore
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src={kotu} class="img-fluid rounded-start" alt="Destinasi Wisata" />
+                </div>
+                <div class="col-md-9">
+                  <div className="card-body ">
+                    <h7>
+                      <b> Kota Tua </b>
+                    </h7>{" "}
+                    <br />
+                    <small>Jakarta, Indonesia </small>
+                    <p className="paragraf">
+                      Kota Tua, also known as Old Batavia, transports visitors back to Jakarta's colonial past. The area is rich with Dutch colonial buildings, some of which have been converted into museums. Fatahillah Square is the heart
+                      of Kota Tua, where you can visit the Jakarta History Museum, housed in the old city hall. The Wayang Museum displays traditional Indonesian puppetry, while Café Batavia offers a nostalgic dining experience with a view
+                      of the square.
+                    </p>
+                    <a href="signin" type="button" className="btn btn-primary btn-sm">
+                      Explore
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src={ancol} class="img-fluid rounded-start" alt="Destinasi Wisata" />
+                </div>
+                <div class="col-md-9">
+                  <div className="card-body ">
+                    <h7>
+                      <b> Ancol Dreamland</b>
+                    </h7>{" "}
+                    <br />
+                    <small>Jakarta, Indonesia </small>
+                    <p className="paragraf">
+                      Ancol Dreamland is Jakarta's premier recreational complex, located along the waterfront. It includes Dunia Fantasi, an amusement park with thrilling rides and attractions themed around various cultures. Sea World
+                      offers an impressive aquarium showcasing marine life, while Atlantis Water Adventure features pools and slides for all ages. The Ancol complex also includes art markets, an eco-park, and numerous dining options, making
+                      it a perfect family destination.
+                      <br />
+                    </p>
+                    <a href="/signin" type="button" className="btn btn-primary btn-sm">
+                      Explore
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
